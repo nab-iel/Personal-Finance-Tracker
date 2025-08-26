@@ -1,7 +1,19 @@
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
-from sqlalchemy.orm import declarative_base, sessionmaker
-import os
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 from dotenv import load_dotenv
+import os
+
+Base = declarative_base()
+
+class User(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String, index=True)
+    email = Column(String, index=True)
+    password = Column(String)
 
 load_dotenv()
 
@@ -18,10 +30,3 @@ SessionLocal = sessionmaker(
 )
 
 Base = declarative_base()
-
-async def get_db():
-    """
-    Dependency to get an async database session.
-    """
-    async with SessionLocal() as session:
-        yield session
