@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, Numeric, Date
 
-from database import Base
+from app.database import Base
 
 class Budget(Base):
     __tablename__ = "budgets"

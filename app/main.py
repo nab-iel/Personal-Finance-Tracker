@@ -2,9 +2,9 @@ from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-from models import User
+from models.user import User
 from dependencies import get_db
-from schemas import UserCreate, UserOut, UserLogin, Token
+from schemas.user import UserCreate, UserOut, UserLogin, Token
 from security import create_access_token, verify_password, get_password_hash, decode_access_token
 from datetime import timedelta
 app = FastAPI()
