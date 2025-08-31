@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from api.v1.api import api_router
+import models
+from app.database import engine, Base
 
 app = FastAPI(
     title="Personal Finance Tracker API",
