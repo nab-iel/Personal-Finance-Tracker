@@ -12,7 +12,7 @@ class CategoryUpdate(BaseModel):
 
 class CategoryResponse(CategoryBase):
     id: int
-    owner_id: int
+    owner_id: Optional[int] = None
 
     class Config:
         from_attributes = True
