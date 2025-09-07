@@ -4,10 +4,10 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from datetime import timedelta
 
-from models.user import User
+from app.models.user import User
 from app.dependencies import get_db
-from schemas.user import UserLogin, Token, UserOut
-from core.security import create_access_token, verify_password, decode_access_token
+from app.schemas.user import UserLogin, Token, UserOut
+from app.core.security import create_access_token, verify_password, decode_access_token
 
 router = APIRouter()
 security = HTTPBearer()

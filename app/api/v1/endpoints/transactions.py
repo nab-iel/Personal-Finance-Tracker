@@ -5,10 +5,10 @@ from sqlalchemy.orm import selectinload
 from typing import List
 
 from app.dependencies import get_db
-from api.v1.endpoints.auth import get_current_user
-from models.user import User
-from models.transaction import Transaction
-from schemas.transaction import TransactionCreate, TransactionUpdate, TransactionResponse
+from app.api.v1.endpoints.auth import get_current_user
+from app.models.user import User
+from app.models.transaction import Transaction
+from app.schemas.transaction import TransactionCreate, TransactionUpdate, TransactionResponse
 
 router = APIRouter()
 

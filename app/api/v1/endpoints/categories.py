@@ -4,11 +4,11 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy import or_
 
-from schemas.category import CategoryCreate, CategoryUpdate, CategoryResponse
+from app.schemas.category import CategoryCreate, CategoryUpdate, CategoryResponse
 from app.dependencies import get_db
-from models.user import User
-from models.category import Category
-from api.v1.endpoints.auth import get_current_user
+from app.models.user import User
+from app.models.category import Category
+from app.api.v1.endpoints.auth import get_current_user
 
 router = APIRouter()
 

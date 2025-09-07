@@ -2,7 +2,7 @@ import pytest
 from sqlalchemy.orm import Session
 
 from app.database import Base, engine
-from models import User
+from app.models import User
 
 @pytest.fixture(scope="function")
 def session():
